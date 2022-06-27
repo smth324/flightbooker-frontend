@@ -1,0 +1,16 @@
+.selection-error-container {
+    border: 2px solid #ed2a29;
+    padding: 20px;
+    color: #ed2a29;
+}
+
+.selection-error-header {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.selection-warning-icon{
+    width: 30px !important;
+    height: 30px !important;
+}

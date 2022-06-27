@@ -1,0 +1,87 @@
+:root {
+    --square-length: 20px
+}
+
+.admin-planes-page {
+    display: grid;
+    gap: 0px;
+    place-items: center;
+}
+
+.rowss {
+    width: var(--square-length);
+    height: var(--square-length);
+    border: 0px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-overflow: ellipsis;
+    background-color: white;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.input {
+    text-align: center;
+    font-size: 0.8rem;
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+    width: var(--square-length);
+    height: var(--square-length);
+}
+
+.rows:hover {
+    opacity: 0.3;
+}
+
+.admin-planes {
+    display: grid;
+    place-items: center;
+}
+
+.icon {
+    width: calc(var(--square-length) * 0.8) !important;
+    height: calc(var(--square-length) * 0.8) !important;
+}
+
+.control-size {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: sticky;
+    top: 45px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.exitIconbtn-inner {
+    background-color: grey;
+    width: var(--square-length);
+    height: var(--square-length);
+}
+
+.greyLeftbtn-inner {
+    background: linear-gradient(to right, grey 50%, white 50%);
+    width: var(--square-length);
+    height: var(--square-length);
+}
+
+.greyRightbtn-inner {
+    background: linear-gradient(to right, white 50%, grey 50%);
+    width: var(--square-length);
+    height: var(--square-length);
+}
+
+.control-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 20px;
+    position: sticky;
+    top: 10px
+}

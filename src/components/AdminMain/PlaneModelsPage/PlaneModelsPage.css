@@ -1,0 +1,31 @@
+.admin-seatings-header {
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.admin-seatings-table {
+    padding-top: 30px;
+    height: 400px;
+    width: 100%;
+}
+
+.admin-seatings-page {
+    padding: 50px;
+}
+
+.seatings-searchbar {
+    width: 100%;
+}
+
+.admin-seatings-form-container {
+    height: 130px;
+}
+
+.admin-seatings-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.admin-seatings-create-btn{
+    padding-left: 20px;
+}

@@ -1,0 +1,11 @@
+.book-form-input {
+    width: 300px;
+}
+
+.admin-flights-form {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}

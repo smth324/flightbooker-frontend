@@ -1,0 +1,23 @@
+.selection-info-container {
+    border: 2px solid #212c62;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.selection-info-header {
+    font-weight: 600;
+}
+
+.selection-info-text {
+    color: #616161;
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 1.42857143;
+}
+
+.selection-info-icon{
+    color: #212c62;
+    width: 30px !important;
+    height: 30px !important;
+}

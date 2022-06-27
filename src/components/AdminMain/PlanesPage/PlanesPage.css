@@ -1,0 +1,31 @@
+.admin-planes-header {
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.admin-planes-table {
+    padding-top: 30px;
+    height: 400px;
+    width: 100%;
+}
+
+.adminPlanesPage {
+    padding: 50px;
+}
+
+.planes-searchbar {
+    width: 100%;
+}
+
+.admin-planes-form-container {
+    height: 130px;
+}
+
+.admin-planes-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.admin-planes-create-btn{
+    padding-left: 20px;
+}

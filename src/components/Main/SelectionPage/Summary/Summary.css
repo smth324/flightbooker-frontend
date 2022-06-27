@@ -1,0 +1,39 @@
+.selection-summary-container {
+    width: 25%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.selection-summary {
+    position: sticky;
+    top: 0px;
+    color: white;
+}
+
+.selection-summary-part {
+    background-color: #212c62;
+    margin-bottom: 1px;
+    padding: 10px;
+}
+
+.selection-summary-continue {
+    color: white;
+    box-sizing: content-box;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    font-weight: 500;
+    appearance: unset;
+    font-size: 17px;
+    background: #ed2a29;
+    border: 1px solid #ed2a29;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1px;
+    overflow: hidden;
+}
+
+.selection-summary-times {
+    display: inline;
+}

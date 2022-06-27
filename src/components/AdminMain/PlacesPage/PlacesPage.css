@@ -1,0 +1,31 @@
+.admin-places-header {
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.admin-places-table {
+    padding-top: 30px;
+    height: 400px;
+    width: 100%;
+}
+
+.admin-places-page {
+    padding: 50px;
+}
+
+.places-searchbar {
+    width: 100%;
+}
+
+.admin-places-form-container {
+    height: 130px;
+}
+
+.admin-places-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.admin-places-create-btn{
+    padding-left: 20px;
+}

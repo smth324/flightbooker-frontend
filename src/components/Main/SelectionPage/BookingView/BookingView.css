@@ -1,0 +1,161 @@
+.selection-booking-infomessage {
+    color: #212c62;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.selection-booking-passenger-container {
+    margin-top: 15px;
+    box-shadow: 1px 1px 3px rgb(0 0 0 / 25%);
+    overflow: hidden;
+}
+
+.selection-booking-passenger-header {
+    background-color: #f0f0f0;
+    cursor: pointer;
+    position: relative;
+    color: rgb(97, 97, 97);
+    padding-left: 40px;
+    padding-top: 10px;
+}
+
+.selection-booking-passenger-header:hover {
+    background-color: white;
+}
+
+.selection-booking-passenger-type {
+    font-size: 22px;
+    padding-bottom: 5px;
+}
+
+.selection-booking-passenger-subheader {
+    font-size: 14px;
+}
+
+.selection-booking-passenger-header-icon {
+    position: absolute;
+    font-weight: 600;
+    width: 40px !important;
+    height: 40px !important;
+    right: 10px;
+    top: 10px;
+}
+
+.selection-booking-passenger-form {
+    height: 400px;
+    transition: height 0.3s linear;
+    background-color: white;
+}
+
+.selection-booking-passenger-form-inner {
+    padding: 0px 20px;
+    padding-top: 40px;
+    height: 100%;
+}
+
+.selection-booking-passenger-form-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.selection-booking-validate-btn-container {
+    margin-top: 20px;
+}
+
+.selection-booking-validate-btn {
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 17px;
+    background: #ed2a29;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 180px;
+    box-sizing: content-box;
+    background-color: #212c62;
+    border-color: #212c62;
+    color: white;
+    box-shadow: 3px 3px 1px rgb(0 0 0 / 25%);
+}
+
+.selection-booking-validate-btn:hover {
+    background-color: #005eb8;
+}
+
+.selection-booking-contact {
+    margin-top: 15px;
+    box-shadow: 1px 1px 3px rgb(0 0 0 / 25%);
+}
+
+.selection-booking-contact-icon {
+    margin-right: 10px;
+}
+
+.selection-booking-contact-header {
+    background-color: #f0f0f0;
+    position: relative;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.selection-booking-contact-main {
+    padding: 15px;
+}
+
+.selection-booking-contact-top {
+    border-bottom: 1px solid #f0f0f0;
+    padding-top: 10px;
+    display: flex;
+}
+
+.selection-booking-contact-top-left {
+    padding-top: 10px;
+    flex: 0.7;
+}
+
+.selection-booking-contact-top-left-header {
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+
+.selection-booking-contact-top-right-header {
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+
+.selection-booking-contact-bottom {
+    padding-top: 20px;
+    display: flex;
+}
+
+.selection-booking-contact-bottom-left {
+    flex: 0.7;
+}
+
+.selection-booking-contact-bottom-left-header {
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+
+@media (max-width: 700px) {
+    .selection-booking-contact-top {
+        flex-direction: column;
+    }
+
+    .selection-booking-contact-bottom {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 675px) {
+    .selection-booking-passenger-form {
+        height: 475px;
+    }
+
+}

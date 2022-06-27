@@ -1,0 +1,11 @@
+.admin-planes-form {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.admin-planes-form-dest {
+    padding-left: 30px;
+}

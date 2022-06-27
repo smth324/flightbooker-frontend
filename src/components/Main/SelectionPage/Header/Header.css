@@ -1,0 +1,43 @@
+.selection-header {
+    display: flex;
+    justify-content: center;
+    background-color: #212c62;
+    height: 80px;
+}
+
+.selection-header-inner {
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.selection-header-logo {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+}
+
+.selection-header-search-container {
+    color: white;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.seleciton-header-search-icon {
+    height: 30px !important;
+    width: 30px !important;
+}
+
+@media (max-width: 1200px) {
+    .selection-header-search-container {
+        padding-right: 20px;
+    }
+
+    .selection-header-inner {
+        width: 100%;
+    }
+}

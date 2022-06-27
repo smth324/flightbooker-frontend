@@ -1,0 +1,27 @@
+.admin-bookings-header {
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.admin-bookings-table {
+    padding-top: 30px;
+    height: 400px;
+    width: 100%;
+}
+
+.admin-bookings-page {
+    padding: 50px;
+}
+
+.admin-bookings-searchBar {
+    width: 100%;
+}
+
+.admin-bookings-form-container {
+    height: 130px;
+}
+
+.admin-bookings-buttons {
+    display: flex;
+    flex-direction: row;
+}

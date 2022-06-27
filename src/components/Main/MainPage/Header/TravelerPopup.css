@@ -1,0 +1,101 @@
+ .travelInfo:hover .header-travelInfo-popup {
+     color: #1d2d61;
+     visibility: visible;
+     animation: traveler-popup 200ms ease-in;
+ }
+
+ .travelInfo:hover::before {
+     visibility: visible;
+     animation: traveler-popup 200ms ease-in;
+ }
+
+ @keyframes traveler-popup {
+     0% {
+         opacity: 0%;
+     }
+
+     100% {
+         opacity: 100%;
+     }
+ }
+
+ .header-travelInfo-popup:hover {
+     color: #1d2d61;
+     visibility: visible;
+ }
+
+ .header-travelInfo-popup {
+     position: absolute;
+     top: 76px;
+     left: -968px;
+     width: 1440px;
+     background-color: #f5f7fa;
+     visibility: hidden;
+     padding-top: 20px;
+     padding-bottom: 20px;
+ }
+
+ .header-travelInfo-group-options {
+     list-style: none;
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-start;
+ }
+
+ .header-travelInfo-group-options li {
+     padding-right: 15px;
+     text-align: left;
+ }
+
+ .header-travelInfo-options {
+     margin-left: -40px;
+     margin-top: 15px;
+ }
+
+ .header-travelInfo-options {
+     list-style: none;
+ }
+
+ .header-travelInfo-group-options-header {
+     text-decoration: none;
+     white-space: nowrap;
+     font-size: 20px;
+     line-height: 20px;
+     font-weight: 600;
+ }
+
+ .header-travelInfo-options li {
+     color: black;
+     margin-top: 10px;
+     font-size: 15px;
+ }
+
+ .header-travelInfo-options li a {
+     text-decoration: none;
+     white-space: nowrap;
+ }
+
+ .header-travelInfo-options li a:hover {
+     text-decoration: underline;
+ }
+
+.travelInfo::before {
+     content: "";
+     position: absolute;
+     display: block;
+     width: 0;
+     height: 0;
+     z-index: 1001;
+     bottom: -1px;
+     right: 5px;
+     border-left: 7px solid transparent;
+     border-right: 7px solid transparent;
+     border-bottom: 7px solid #f5f7fa;
+     visibility: hidden;
+ }
+
+.travelInfo {
+     position: relative;
+     margin-right: -15px;
+     cursor: pointer;
+ }

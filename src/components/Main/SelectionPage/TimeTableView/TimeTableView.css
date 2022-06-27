@@ -1,0 +1,222 @@
+.selection-timetable-route-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 23px;
+    overflow: hidden;
+    margin: 20px 0px;
+}
+
+.selection-timetable-text {
+    margin-top: 30px;
+}
+
+.selection-timetable-route {
+    display: flex;
+    align-items: center;
+}
+
+.selection-timetable-flight-icon {
+    width: 50px !important;
+    height: 50px !important;
+}
+
+.selection-timetable-arrow-icon {
+    width: 50px !important;
+    height: 50px !important;
+    padding: 0px 15px;
+}
+
+.selection-date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+
+@media (max-width: 450px) {
+    .selection-timetable-route {
+        flex-direction: column;
+    }
+}
+
+.selection-timetable-date-header {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #dfdfdf;
+    background-color: #f0f0f0;
+    padding: 5px 0px;
+    font-size: 15px;
+}
+
+.selection-timetable-dates-container {
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+    overflow-x: auto;
+    background-color: #f0f0f0;
+    position: relative;
+}
+
+.selection-timetable-dates-container-bottom {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    background-color: #3f3f3f;
+    z-index: 1;
+}
+
+.selection-date-box-empty {
+    width: 100px;
+    background-color: #e7e7e7;
+    border-top: 5px solid #e7e7e7;
+    padding: 0px 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0px 5px;
+    cursor: default;
+    color: #616161;
+}
+
+.selection-date-box {
+    width: 100px;
+    border-top: 5px solid #dfdfdf;
+    background-color: #dfdfdf;
+    padding: 0px 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0px 5px;
+    cursor: pointer;
+}
+
+.selection-date-box-header {
+    text-align: center;
+    border-bottom: 1px solid #3f3f3f;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.selection-date-box-text {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.selection-timetable-header-container {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.selection-timetable-header {
+    background-color: #ececec;
+    font-size: 12px;
+    padding: 5px;
+    flex: 0.45;
+}
+
+.selection-timetable-header-sell-icon {
+    color: #ed2a29;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.selection-timetable-header-check-icon {
+    color: black;
+    padding-left: 10px;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.selection-timetable-header-option {
+    flex: 0.55;
+    background-color: #D0271E;
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.selection-timetable-timeoption {
+    border-left: solid 10px #f0f0f0;
+    padding: 10px;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+}
+
+.selection-timetable-timeoption:hover {
+    border-left: solid 10px #ccc;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 25%);
+    background-color: white;
+}
+
+.selection-timetable-timeoption-main {
+    flex: 0.45;
+}
+
+.selection-timetable-timeoption-direction-icon {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    color: #005eb8;
+}
+
+.selection-timetable-timeoption-duration {
+    font-weight: 600;
+    display: inline;
+}
+
+.selection-timetable-timeoption-duration-text {
+    font-size: 18px;
+    padding-bottom: 8px;
+    padding-top: 3px;
+}
+
+.selection-timetable-timeoption-box-container {
+    flex: 0.55;
+    display: flex;
+    justify-content: center;
+}
+
+.selection-timeoption-header-check-icon {
+    color: white;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.selection-timetable-timeoption-box {
+    height: 120px;
+    width: 120px;
+    background: #ececec;
+    box-sizing: content-box;
+    border: 5px solid #ececec;
+    box-shadow: 1px 1px 2px rgb(0 0 0 / 25%);
+    cursor: pointer;
+    position: relative;
+}
+
+.selection-timetable-timeoption-box-header {
+    height: 30px;
+    display: flex;
+    width: 120px;
+}
+
+.selection-timetable-timeoption-box-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    width: 120px;
+}
+
+.selection-timetable-timeoption-box:hover {
+    background: white;
+    border: 5px solid #BA231A;
+    ;
+    box-shadow: 1px 1px 2px rgb(0 0 0 / 25%);
+}

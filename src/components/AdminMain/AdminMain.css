@@ -1,0 +1,19 @@
+.checklogin {
+  font-family: Helvetica;
+  display: block !important;
+}
+
+.admin-app {
+  display: flex;
+  flex-direction: row;
+}
+
+.admin-app-main {
+  flex: 1;
+}
+
+body {
+  display: block;
+  margin: 0px;
+  overflow: auto;
+}

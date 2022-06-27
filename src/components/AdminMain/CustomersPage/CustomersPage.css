@@ -1,0 +1,27 @@
+.admin-customers-header {
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.admin-customers-table {
+    padding-top: 30px;
+    height: 400px;
+    width: 100%;
+}
+
+.admin-customers-page {
+    padding: 50px;
+}
+
+.admin-customers-searchBar {
+    width: 100%;
+}
+
+.admin-customers-form-container {
+    height: 130px;
+}
+
+.admin-customers-buttons {
+    display: flex;
+    flex-direction: row;
+}

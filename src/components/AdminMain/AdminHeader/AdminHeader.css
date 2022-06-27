@@ -1,0 +1,9 @@
+.admin-header {
+    display: flex;
+    padding: 5px;
+    background-color: aqua;
+}
+
+.admin-header-admin {
+    margin-left: auto;
+}

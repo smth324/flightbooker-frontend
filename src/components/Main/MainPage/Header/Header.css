@@ -1,0 +1,106 @@
+.header-navbar {
+    position: sticky;
+    top: 0px;
+    border: 1px solid transparent;
+    background-color: #1d2d61;
+    color: #fff;
+    height: 70px;
+    z-index: 10;
+    margin-bottom: 105px;
+    margin-top: -15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.header-group-options {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-right: 30px;
+}
+
+.header-option {
+    text-align: center;
+    justify-self: flex-end;
+    padding-top: 25px;
+    color: white;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    white-space: nowrap;
+}
+
+.header-dropSvg {
+    margin-bottom: -5px;
+}
+
+.mabuhay {
+    margin-left: 3px;
+    margin-right: -10px;
+}
+
+.header-drop {
+    margin-top: -5px;
+}
+
+.header-logo {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 55px;
+    background-size: 38%;
+    width: 50%;
+}
+
+.header-option-hamburger {
+    display: none;
+    border: none;
+    background-color: inherit;
+    color: white;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+.header-drawer {
+    width: 35vw;
+    font: helvetica;
+    color: #212b36;
+}
+
+.header-drawer-option {
+    padding: 5px;
+    border-bottom: 0.8px solid #dfe3e8;
+    white-space: nowrap;
+    padding-left: 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.header-drawer-option>a {
+    text-decoration: none;
+    color: #212b36;
+}
+
+@media (max-width: 990px) {
+    .header-option {
+        display: none;
+    }
+
+    .header-group-options {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .header-logo {
+        background-size: 60%;
+        width: 90%;
+    }
+    
+
+    .header-option-hamburger {
+        display: inline;
+    }
+}
