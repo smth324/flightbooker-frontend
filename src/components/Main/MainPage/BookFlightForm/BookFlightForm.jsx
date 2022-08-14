@@ -6,12 +6,12 @@ import flightsService from '../../../../services/flightsService'
 import PassengerButton from './PassengerButton'
 import { classes } from '../../../../helpers/formData'
 import routesService from '../../../../services/routesService'
-import './BookFlightForm.css'
 import { useFormData, useFormDataUpdate } from '../../../../contexts/FormDataContext'
+import './BookFlightForm.css'
 
 // sets defualt availabale values for flight dates
 const today = new Date()
-const max = new Date(new Date().setDate(today.getDate() + 15))
+const max = new Date(new Date().setDate(today.getDate() + 45))
 
 const available = {
   backgroundColor: 'red',
@@ -72,26 +72,29 @@ const BookFlightForm = ({ setFlights }) => {
       cabinClass: formData.cabinClass,
       child: formData.child,
       adult: formData.adult,
+      promoPercent: formData.promoPercent,
+      price: formData.price,
     }))
     window.localStorage.removeItem('flights')
     window.localStorage.setItem('flights', JSON.stringify(flights))
     setFlights(flights)
     navigate('/selection/select/calendar')
   }
-
   return (
     <form className="book-form-bg">
       <div className="book-form-header">Book Flight</div>
       <div className="book-form-input-row">
         <Autocomplete
           autoHighlight
+          id="origin"
           autoComplete
-          options={formData.origin === null
+          autoSelect
+          options={(formData.origin === null && formData.destination === null) || (formData.origin === '' && formData.destination === null)
             ? [...new Set(routes.map((x) => x.origin.name))]
             : [...new Set(routes.map((x) => x.origin.name))]
               .filter((x) => x !== formData.destination)
               .filter((x) => {
-                if (formData.destination === '') {
+                if (formData.destination === null || formData.destination === '') {
                   return true
                 }
                 return routes
@@ -100,28 +103,29 @@ const BookFlightForm = ({ setFlights }) => {
                   .includes(x)
               })}
           className="main-book-form-input"
-          value={formData.origin}
           renderInput={(params) => <TextField {...params} variant="filled" label="Origin" />}
           onInputChange={(event, value) => setFormData((prev) => ({ ...prev, origin: value }))}
         />
         <Autocomplete
+          id="destination"
           autoHighlight
-          options={formData.destination === null
+          autoSelect
+          options={(formData.destination === null && formData.origin === null) || (formData.destination === '' && formData.origin === null)
             ? [...new Set(routes.map((x) => x.destination.name))]
             : [...new Set(routes.map((x) => x.destination.name))]
               .filter((x) => x !== formData.origin)
               .filter((x) => {
-                if (formData.origin === '') {
+                if (formData.origin === null || formData.origin === '') {
                   return true
                 }
+                console.log(x)
                 return routes
                   .filter((route) => formData.origin === route.origin.name)
                   .map((route) => route.destination.name)
                   .includes(x)
               })}
           className="main-book-form-input"
-          value={formData.destination}
-          renderInput={(params) => <TextField {...params} variant="filled" label="Destination" />}
+          renderInput={(params) => <TextField {...params} variant="filled" id="destination" label="Destination" />}
           onInputChange={(event, value) => setFormData((prev) => ({ ...prev, destination: value }))}
         />
       </div>
@@ -134,7 +138,7 @@ const BookFlightForm = ({ setFlights }) => {
           onChange={(newValue) => {
             setFormData((prev) => ({ ...prev, departureDate: new Date(newValue).toISOString() }))
           }}
-          renderInput={(params) => <TextField variant="filled" className="main-book-form-input" {...params} />}
+          renderInput={(params) => <TextField variant="filled" id="departureDate" className="main-book-form-input" {...params} />}
         />
         <DatePicker
           label="Return date"
@@ -144,7 +148,7 @@ const BookFlightForm = ({ setFlights }) => {
           onChange={(newValue) => {
             setFormData((prev) => ({ ...prev, returnDate: new Date(newValue).toISOString() }))
           }}
-          renderInput={(params) => <TextField variant="filled" className="main-book-form-input" {...params} />}
+          renderInput={(params) => <TextField variant="filled" id="returnDate" className="main-book-form-input" {...params} />}
         />
       </div>
       <div className="book-form-input-row">
@@ -157,6 +161,7 @@ const BookFlightForm = ({ setFlights }) => {
         />
         <Autocomplete
           autoHighlight
+          id="cabinClass"
           options={classes}
           value={formData.cabinClass}
           className="main-book-form-input"

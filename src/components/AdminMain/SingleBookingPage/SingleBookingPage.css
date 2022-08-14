@@ -1,5 +1,6 @@
 
-.admin-customers-table {
+.admin-customers-single-table {
+    padding: 10px;
     padding-top: 30px;
     height: 400px;
     width: 100%;
@@ -10,8 +11,12 @@
     font-size: 40px;
 }
 
-.admin-customers-page {
-    padding: 50px;
+.admin-customers-single-page {
+    padding: 15px;
+}
+
+.admin-customers-single-flightcontainer{
+    padding: 10px;
 }
 
 .admin-customers-searchBar {

@@ -1,0 +1,30 @@
+.selection-page-promotion-container {
+    box-shadow: 1px 1px 1px #aaa;
+    margin-bottom: 20px;
+}
+
+.selection-page-promotion-header {
+    background-color: #ececec;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.selection-page-promotion-icon {
+    padding-right: 10px;
+}
+
+.selection-page-promotion-main {
+    padding: 10px;
+}
+
+.selection-page-promotion-label {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.selection-page-promotion-submit {
+    padding-left: 10px;
+}

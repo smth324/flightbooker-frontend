@@ -2,24 +2,24 @@ import React, { useState } from 'react'
 import {
   Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, TextField,
 } from '@mui/material'
-import { Link } from 'react-router-dom'
+import { format, parseISO } from 'date-fns'
+import { Link, useNavigate } from 'react-router-dom'
 import './CustomersPage.css'
 
 const CustomersPage = ({ customers }) => {
-  const [hidden, setHidden] = useState(true)
   const [search, setSearch] = useState('')
 
-  const btntxt = hidden ? 'Make a new customer' : 'cancel'
-  const btnstyle = hidden || { color: 'error' }
+  const navigate = useNavigate()
+  const makeCustomer = () => {
+    navigate('/admin/bookings')
+  }
 
   return (
     <article className="admin-customers-page">
       <header className="admin-customers-header">Customers</header>
-      <div className="admin-customers-form-container">
-        <div hidden={hidden} />
-      </div>
+      <div className="admin-customers-form-container" />
       <div className="admin-customers-buttons">
-        <Button variant="contained" {...btnstyle} onClick={() => setHidden(!hidden)}>{btntxt}</Button>
+        <Button variant="contained" onClick={() => makeCustomer()}>Make a new customer</Button>
       </div>
       <div className="admin-customers-table">
         <TextField className="admin-customers-searchBar" label="Search" variant="filled" value={search} onChange={(event) => setSearch(event.target.value)} />
@@ -48,7 +48,7 @@ const CustomersPage = ({ customers }) => {
                     <TableCell align="right">{customer.title}</TableCell>
                     <TableCell align="right">{customer.firstName}</TableCell>
                     <TableCell align="right">{customer.lastName}</TableCell>
-                    <TableCell align="center">{customer.birthday}</TableCell>
+                    <TableCell align="center">{format(parseISO(customer.birthday), 'MMM dd, yyyy')}</TableCell>
                     <TableCell align="center">{customer.type}</TableCell>
                     <TableCell align="center">{customer.bookingId}</TableCell>
                     <TableCell align="center">

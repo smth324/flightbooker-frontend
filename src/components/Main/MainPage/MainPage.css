@@ -3,3 +3,122 @@
     font-family: Helvetica;
     max-width: 1440px;
 }
+
+.main-negative-spacer {
+    margin-top: -500px
+}
+
+.main-details-container {
+    padding: 10px 50px;
+}
+
+.main-announcement {
+    padding: 10px;
+    text-align: center;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    font-weight: 600;
+}
+
+.main-announcement-links {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+.main-announcement-links:hover {
+    text-decoration: underline
+}
+
+.main-options-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 25px;
+    overflow: hidden;
+}
+
+.main-options-box {
+    flex: 0.33;
+    padding: 30px 80px;
+    background-color: #fff;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, .1);
+    color: #637381;
+    text-decoration: none;
+}
+
+.main-options-box-header {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    color: #001f60;
+}
+
+.main-options-box-header:hover {
+    text-decoration: underline;
+}
+
+.main-footer-container {
+    margin-top: 15px;
+    padding: 30px 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main-footer-list-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.main-footer-list{
+    list-style: none;
+}
+
+.main-footer-list-item{
+    display: inline;
+    margin-right: 10px;
+}
+
+.main-footer-list-link {
+    color: #001e60;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.main-footer-list-item:last-child > .main-footer-list-link::after{
+    display: none;
+}
+
+.main-footer-list-link::after {
+    display: inline-block;
+    content: "";
+    border-radius: 60px;
+    height: 2px;
+    width: 2px;
+    margin-right: 3px;
+    margin-left: 7px;
+    margin-bottom: 3px;
+    background-color: #001f60;
+}
+
+.main-footer-logo-container {
+    display: flex;
+    justify-content: center;
+}
+
+.main-footer-logo {
+    width: 250px;
+}
+
+
+@media (max-width: 990px) {
+    .main-negative-spacer {
+        display: none;
+    }
+
+    .main-options-container {
+        flex-direction: column;
+    }
+}

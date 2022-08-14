@@ -23,13 +23,13 @@ const BookingsPage = ({ bookings, flights }) => {
             <TableHead>
               <TableRow>
                 <TableCell>ID</TableCell>
-                <TableCell>Voucher Code</TableCell>
                 <TableCell>Promotion Code</TableCell>
                 <TableCell align="center">Phone Number</TableCell>
                 <TableCell align="center">Emergency Name</TableCell>
                 <TableCell align="center">Emergency Phone</TableCell>
                 <TableCell align="center">Email</TableCell>
                 <TableCell align="center">Flight</TableCell>
+                <TableCell align="center">Price</TableCell>
                 <TableCell align="center">Options</TableCell>
               </TableRow>
             </TableHead>
@@ -41,13 +41,13 @@ const BookingsPage = ({ bookings, flights }) => {
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                   >
                     <TableCell component="th" scope="row">{booking.id}</TableCell>
-                    <TableCell>{booking.voucherCode}</TableCell>
                     <TableCell>{booking.promotionCode}</TableCell>
                     <TableCell align="center">{booking.phoneNumber}</TableCell>
                     <TableCell align="center">{booking.emergencyName}</TableCell>
                     <TableCell align="center">{booking.emergencyPhone}</TableCell>
                     <TableCell align="center">{booking.email}</TableCell>
-                    <TableCell align="center">{booking.flightId}</TableCell>
+                    <TableCell align="center">{booking.flight?.id || booking.flightId}</TableCell>
+                    <TableCell align="center">{booking.price}</TableCell>
                     <TableCell align="center">
                       <Button>
                         <Link style={{ textDecoration: 'none' }} to={`/admin/bookings/${booking.id}`}>Look Up Booking</Link>

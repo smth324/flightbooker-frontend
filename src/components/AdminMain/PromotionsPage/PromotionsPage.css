@@ -1,0 +1,27 @@
+.admin-promotions-header {
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.admin-promotions-table {
+    padding-top: 30px;
+    height: 400px;
+    width: 100%;
+}
+
+.admin-promotions-page {
+    padding: 50px;
+}
+
+.admin-promotions-searchBar {
+    width: 100%;
+}
+
+.admin-promotions-form-container {
+    height: 130px;
+}
+
+.admin-promotions-buttons {
+    display: flex;
+    flex-direction: row;
+}

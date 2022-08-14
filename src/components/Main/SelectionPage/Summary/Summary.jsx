@@ -100,7 +100,11 @@ const Summary = ({ bookingViewRef }) => {
             )
             : null}
         </div>
-        {formData.price ? <div className="selection-summary-part">{`PHP ${formData.price}`}</div> : null}
+        {formData.price || formData.price === 0 ? (
+          <div className="selection-summary-part">
+            {`PHP ${formData.price * (formData.adult + formData.child) * (1 - formData.promoPercent / 100)}`}
+          </div>
+        ) : null}
         <div className="selection-summary-continue" onClick={nextPage} onKeyDown={nextPage} role="button" tabIndex={0}>
           CONTINUE
           <ArrowRightIcon />

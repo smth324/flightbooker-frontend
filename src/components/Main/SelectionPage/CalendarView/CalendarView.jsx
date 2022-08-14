@@ -2,7 +2,7 @@ import React from 'react'
 import FlightIcon from '@mui/icons-material/Flight'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
-import { parseISO, format } from 'date-fns'
+import { parseISO, format, isSameDay } from 'date-fns'
 import ArrowRightIcon from '@mui/icons-material/ArrowRight'
 import { useNavigate } from 'react-router-dom'
 import InfoBox from '../InfoBox'
@@ -80,6 +80,8 @@ const CalendarView = ({ flights }) => {
           role="button"
           onKeyDown={() => changeSelectedDate(date)}
           tabIndex={0}
+          id={new Date(formData.newDepartureDate).toDateString()
+            === date.toDateString() ? 'selected-box' : null}
           style={new Date(formData.newDepartureDate).toDateString()
              === date.toDateString() ? selectedStyle : {}}
         >
@@ -89,19 +91,23 @@ const CalendarView = ({ flights }) => {
               <div>{format(parseISO(date.toISOString()), 'MMM').toUpperCase()}</div>
             </div>
             {new Date(formData.newDepartureDate).toDateString()
-            === date.toDateString() ? <CheckCircleIcon /> : null}
+            === date.toDateString() ? <CheckCircleIcon id="check-circle" /> : null}
           </div>
           <div className="selection-date-grid-box-inner">
             <div>From</div>
             <div>PHP</div>
-            <div>5,000</div>
+            <div>
+              {Math.min(...flights
+                .filter((x) => isSameDay(new Date(x.departureDate), new Date(date)))
+                .map((x) => x.price))}
+            </div>
           </div>
         </div>,
       )
     }
   }
   return (
-    <>
+    <div id="calendar-view">
       <InfoBox message={message} />
       <div className="selection-route-container">
         <FlightIcon />
@@ -126,12 +132,12 @@ const CalendarView = ({ flights }) => {
         {dates}
       </div>
       <div className="selection-page-continue-container">
-        <button type="button" className="selection-page-continue-btn" onClick={nextPage}>
+        <button type="button" className="selection-page-continue-btn" id="continue-button" onClick={nextPage}>
           CONTINUE
           <ArrowRightIcon />
         </button>
       </div>
-    </>
+    </div>
   )
 }
 

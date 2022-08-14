@@ -34,6 +34,16 @@ const message = (
   </>
 )
 
+const validatedStyle = {
+  backgroundColor: '#005eb8',
+  color: ' white',
+}
+
+const failedValidatedStyle = {
+  backgroundColor: '#c30054',
+  color: ' white',
+}
+
 const Passenger = React.forwardRef(({
   passengerNumber, setCustomers, customers, type,
 }, ref) => {
@@ -87,16 +97,6 @@ const Passenger = React.forwardRef(({
       domRef.current.scrollIntoView(options)
     },
   }))
-
-  const validatedStyle = {
-    backgroundColor: '#005eb8',
-    color: ' white',
-  }
-
-  const failedValidatedStyle = {
-    backgroundColor: '#c30054',
-    color: ' white',
-  }
 
   let formStyle = {}
   if (validated === null) {

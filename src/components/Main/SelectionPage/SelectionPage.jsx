@@ -37,7 +37,7 @@ const SelectionPage = ({ flights, setFlights }) => {
       .flat(),
   )
   const [booking, setBooking] = useState({
-    email: '', reemail: '', phoneNumber: '', emergencyPhone: '', emergencyName: '',
+    email: '', reemail: '', phoneNumber: '', emergencyPhone: '', emergencyName: '', promotionCode: '',
   })
   const [layout, setLayout] = useState([])
   useEffect(() => {
@@ -49,11 +49,13 @@ const SelectionPage = ({ flights, setFlights }) => {
     }
   }, [])
 
-  const submitBooking = async () => {
+  const submitBooking = async (event) => {
+    event.preventDefault()
     try {
       await bookingsService.create({
         customers: customers.map((x) => ({ ...x, seatId: x.seatId.id })),
         booking: { ...booking, flightId: formData.flight.id },
+        formData,
       })
       dispatch(changeNotification('Success: You have succesfully booked a flight', 5))
     } catch (e) {
@@ -75,7 +77,7 @@ const SelectionPage = ({ flights, setFlights }) => {
                 <Route path="/select/times" element={<TimeTableView flights={flights} />} />
                 <Route path="/book/passengers" element={<BookingView ref={bookingViewRef} customers={customers} setCustomers={setCustomers} booking={booking} setBooking={setBooking} setLayout={setLayout} />} />
                 <Route path="/book/seats" element={<BookingSeatsView customers={customers} setCustomers={setCustomers} layout={layout} />} />
-                <Route path="/pay" element={<PaymentPage submitBooking={submitBooking} />} />
+                <Route path="/pay" element={<PaymentPage submitBooking={submitBooking} booking={booking} setBooking={setBooking} />} />
                 <Route path="/*" element={<div>Not Founds</div>} />
               </Routes>
             )}

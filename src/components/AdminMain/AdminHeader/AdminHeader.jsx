@@ -8,6 +8,7 @@ import './AdminHeader.css'
 const AdminHeader = () => {
   const admin = useSelector((state) => state.admin)
   const dispatch = useDispatch()
+
   const handleLogout = () => {
     dispatch(logoutAdmin())
   }

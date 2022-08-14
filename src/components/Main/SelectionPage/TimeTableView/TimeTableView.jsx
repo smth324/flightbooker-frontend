@@ -7,9 +7,12 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import ArrowRightIcon from '@mui/icons-material/ArrowRight'
 import SellIcon from '@mui/icons-material/Sell'
 import { Link, useNavigate } from 'react-router-dom'
-import { differenceInMinutes, format, parseISO } from 'date-fns'
+import {
+  differenceInMinutes, format, parseISO, isSameDay,
+} from 'date-fns'
 import { useDispatch } from 'react-redux'
 import { changeNotification } from '../../../../reducers/notificationReducer'
+
 import InfoBox from '../InfoBox'
 import './TimeTableView.css'
 import { useFormData, useFormDataUpdate } from '../../../../contexts/FormDataContext'
@@ -66,7 +69,7 @@ const TimeTableView = ({ flights }) => {
     dispatch(changeNotification('Error: You need to pick a flight first', 5))
   }
   const selectFlight = (flight) => {
-    setFormData((value) => ({ ...value, flight, price: 5000 }))
+    setFormData((value) => ({ ...value, flight, price: flight.price }))
   }
 
   const dates = []
@@ -104,7 +107,9 @@ const TimeTableView = ({ flights }) => {
           <div className="selection-date-box-text">
             from PHP
             <br />
-            5000.00
+            {Math.min(...flights
+              .filter((x) => isSameDay(new Date(x.departureDate), new Date(date)))
+              .map((x) => x.price))}
           </div>
         </div>,
       )
@@ -193,7 +198,7 @@ const TimeTableView = ({ flights }) => {
                   <div className="selection-timetable-timeoption-box-content">
                     PHP
                     <br />
-                    5000.00
+                    {x.price}
                   </div>
                 </button>
               </div>

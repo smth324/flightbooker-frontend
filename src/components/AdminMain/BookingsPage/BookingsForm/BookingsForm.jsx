@@ -20,7 +20,6 @@ const BookingsForm = ({ flights }) => {
   const [open, setOpen] = useState(false)
   const [formState, setFormState] = useState(1)
 
-  const [voucherCode, setVoucherCode] = useState('')
   const [promotionCode, setPromotionCode] = useState('')
   const [phoneNumber, setPhoneNumber] = useState('')
   const [emergencyName, setEmergencyName] = useState('')
@@ -44,6 +43,7 @@ const BookingsForm = ({ flights }) => {
   const dispatch = useDispatch()
 
   useEffect(() => {
+    // retireves layout of planes and formats them
     const getLayout = async () => {
       const layoutBoxes = await flightsService.getOneLayout(flight?.id)
       const floorModels = []
@@ -71,13 +71,12 @@ const BookingsForm = ({ flights }) => {
   }
 
   const handleSubmit = () => {
-    if (voucherCode === '' || promotionCode === '' || phoneNumber === '' || emergencyName === '' || emergencyPhone === '' || email === '' || flight === '') {
+    if (promotionCode === '' || phoneNumber === '' || emergencyName === '' || emergencyPhone === '' || email === '' || flight === '') {
       dispatch(changeNotification('Error: Must fill out all fields', 5))
       return
     }
     dispatch(createBooking({
       booking: {
-        voucherCode,
         promotionCode,
         phoneNumber,
         emergencyName,
@@ -85,11 +84,7 @@ const BookingsForm = ({ flights }) => {
         email,
         flightId: flight.id,
       },
-      customers: customers.map((x) => {
-        const toReturn = { ...x }
-        toReturn.seatId = x.seatId.id
-        return toReturn
-      }),
+      customers: customers.map((x) => ({ ...x, seatId: x.seatId.id })),
     }))
   }
 
@@ -108,7 +103,6 @@ const BookingsForm = ({ flights }) => {
             formState === 1
               ? (
                 <>
-                  <TextField sx={{ paddingBottom: 3, marginTop: 1 }} label="Voucher Code" value={voucherCode} onChange={(event) => setVoucherCode(event.target.value)} />
                   <TextField sx={{ paddingBottom: 3 }} label="Promotion Code" value={promotionCode} onChange={(event) => setPromotionCode(event.target.value)} />
                   <TextField sx={{ paddingBottom: 3 }} label="Phone Number" value={phoneNumber} onChange={(event) => setPhoneNumber(event.target.value)} />
                   <TextField sx={{ paddingBottom: 3 }} label="Emergency Name" value={emergencyName} onChange={(event) => setEmergencyName(event.target.value)} />

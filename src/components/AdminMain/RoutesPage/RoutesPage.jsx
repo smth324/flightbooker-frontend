@@ -41,6 +41,7 @@ const RoutesPage = ({ routes, places }) => {
                 <TableCell>ID</TableCell>
                 <TableCell align="right">Origin</TableCell>
                 <TableCell align="right">Destination</TableCell>
+                <TableCell align="right">Price</TableCell>
                 <TableCell align="center">Status</TableCell>
                 <TableCell align="center">Options</TableCell>
               </TableRow>
@@ -57,6 +58,7 @@ const RoutesPage = ({ routes, places }) => {
                     <TableCell component="th" scope="row">{route.id}</TableCell>
                     <TableCell align="right">{route.origin.name}</TableCell>
                     <TableCell align="right">{route.destination.name}</TableCell>
+                    <TableCell align="right">{route.price}</TableCell>
                     <TableCell align="center"><Button variant="contained" onClick={() => handleToggleActive(route)} color={route.active ? 'success' : 'error'}>{route.active ? 'Active' : 'Not Active'}</Button></TableCell>
                     <TableCell align="center">
                       <Button>

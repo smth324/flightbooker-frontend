@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { TextField, Button, Autocomplete } from '@mui/material'
 import { useDispatch } from 'react-redux'
 import { createPlane } from '../../../../reducers/planesReducer'
-import './PlanesForm.css'
 import { changeNotification } from '../../../../reducers/notificationReducer'
+import './PlanesForm.css'
 
 const PlanesForm = ({ planeModels }) => {
   const [name, setName] = useState('')

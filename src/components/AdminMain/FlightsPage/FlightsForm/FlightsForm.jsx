@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Button, TextField, Autocomplete } from '@mui/material'
 import { DateTimePicker } from '@mui/lab'
-import './FlightsForm.css'
 import { createFlight } from '../../../../reducers/flightReducer'
+import { changeNotification } from '../../../../reducers/notificationReducer'
+import './FlightsForm.css'
 
 const FlightsForm = ({ routes, planes }) => {
-  const [arrivalDate, setArrivalDate] = useState()
-  const [departureDate, setDepartureDate] = useState()
+  const [arrivalDate, setArrivalDate] = useState(new Date().toISOString())
+  const [departureDate, setDepartureDate] = useState(new Date().toISOString())
   const [plane, setPlane] = useState()
   const [route, setRoute] = useState()
 
@@ -15,6 +16,10 @@ const FlightsForm = ({ routes, planes }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    if (!plane || !route) {
+      dispatch(changeNotification('Error: Please fill out all the forms', 5))
+      return
+    }
     dispatch(createFlight({
       departureDate, arrivalDate, planeId: plane.id, routeId: route.id,
     }))
@@ -33,7 +38,7 @@ const FlightsForm = ({ routes, planes }) => {
             getOptionLabel={(option) => {
               const origin = option.origin.name.split('-')[0]
               const destination = option.destination.name.split('-')[0]
-              return `${origin}- ${destination}`
+              return `${origin}- ${destination} ${option.price}`
             }}
             sx={{ width: 300, paddingRight: 3 }}
             renderInput={(params) => <TextField {...params} variant="outlined" label="Routes" />}

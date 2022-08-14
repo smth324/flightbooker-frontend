@@ -15,6 +15,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
     "date-fns": "^2.28.0",
+    "mapbox-gl": "^2.9.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.8",
@@ -29,7 +30,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "fulldev": "start npm start && start cd ../flightbooker-backend/ && npm run dev",
+    "cypress:open": "cypress open",
     "lint": "eslint ."
   },
   "proxy": "http://localhost:3002",
@@ -52,11 +53,14 @@
     ]
   },
   "devDependencies": {
+    "cypress": "^10.3.0",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
-    "eslint-plugin-react-hooks": "^4.3.0"
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "history": "^5.3.0"
   }
 }

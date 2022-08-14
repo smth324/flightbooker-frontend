@@ -15,8 +15,7 @@ const SinglePlaneModelsPage = ({ planeModel }) => {
 
   return (
     <div>
-      {planeModel.id}
-      {planeModel.layoutBoxes ? <FormDialog planeModel={planeModel} /> : 'noboxes'}
+      {planeModel.layoutBoxes ? <FormDialog planeModel={planeModel} /> : 'Loading...'}
     </div>
   )
 }

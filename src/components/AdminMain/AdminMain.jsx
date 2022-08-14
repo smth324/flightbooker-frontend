@@ -1,7 +1,5 @@
 import React, { useLayoutEffect, useEffect } from 'react'
-import {
-  Route, Routes, useMatch,
-} from 'react-router-dom'
+import { Route, Routes, useMatch } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import routesReducer, { initializeRoutes } from '../../reducers/routesReducer'
 import placesReducer, { initializePlaces } from '../../reducers/placesReducer'
@@ -21,10 +19,13 @@ import SinglePlaneModelsPage from './SinglePlaneModelsPage'
 import FlightsPage from './FlightsPage'
 import BookingsPage from './BookingsPage'
 import store from '../../store'
-import './AdminMain.css'
 import customersReducer, { initializeCustomers } from '../../reducers/customersReducer'
 import CustomersPage from './CustomersPage'
 import SingleBookingPage from './SingleBookingPage'
+import FlightMapPage from './FlightMapPage'
+import './AdminMain.css'
+import PromotionsPage from './PromotionsPage'
+import promotionsReducer, { initializePromotions } from '../../reducers/promotionsReducer'
 
 const Admin = () => {
   const routes = useSelector((state) => state.routes)
@@ -34,6 +35,7 @@ const Admin = () => {
   const flights = useSelector((state) => state.flights)
   const bookings = useSelector((state) => state.bookings)
   const customers = useSelector((state) => state.customers)
+  const promotions = useSelector((state) => state.promotions)
 
   const dispatch = useDispatch()
 
@@ -61,6 +63,7 @@ const Admin = () => {
     dispatch(initializeFlights())
     dispatch(initializeBookings())
     dispatch(initializeCustomers())
+    dispatch(initializePromotions())
   }, [])
   return (
     <div className="admin-app">
@@ -78,6 +81,8 @@ const Admin = () => {
           <Route path="/flights" element={<FlightsPage flights={flights} routes={routes} planes={planes} />} />
           <Route path="/bookings" element={<BookingsPage bookings={bookings} flights={flights} />} />
           <Route path="/customers" element={<CustomersPage customers={customers} />} />
+          <Route path="/promotions" element={<PromotionsPage promotions={promotions} />} />
+          <Route path="/flightmap" element={<FlightMapPage flights={flights} />} />
         </Routes>
       </section>
     </div>
@@ -96,6 +101,7 @@ const AdminMain = () => {
     store.injectReducer('planeModels', planeModelsReducer)
     store.injectReducer('bookings', bookingReducer)
     store.injectReducer('customers', customersReducer)
+    store.injectReducer('promotions', promotionsReducer)
     dispatch(initializeAdmin())
   }, [])
 

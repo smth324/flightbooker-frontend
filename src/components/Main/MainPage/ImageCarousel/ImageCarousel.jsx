@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import './ImageCarousel.css'
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material'
 import { Radio } from '@mui/material'
 import { images } from '../../../../helpers/carouselData'
+import './ImageCarousel.css'
 
 let intervalId = 0
 const ImageCarousel = () => {

@@ -14,10 +14,11 @@ const FormDataProvider = ({ children }) => {
     destination: null,
     departureDate: new Date().toISOString(),
     newDepartureDate: new Date().toISOString(),
+    promoPercent: 0,
     returnDate: new Date().toISOString(),
     cabinClass: null,
+    price: 0,
   })
-
   return (
     <FormDataContext.Provider value={formData}>
       <FormDataUpdateContext.Provider value={setFormData}>
